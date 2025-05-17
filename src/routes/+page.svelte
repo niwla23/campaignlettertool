@@ -25,7 +25,7 @@
 				href="/generator"
 				value="Brief generieren"
 				class="block text-center bg-[red] text-white p-4 rounded-full cursor-pointer w-full"
-				>Jetzt der Landtagspräsidention schreiben!</a
+				>Jetzt der Landtagspräsidentin schreiben!</a
 			>
 		</div>
 
@@ -38,7 +38,7 @@
 				<li>Pädophilie-Verharmlosung</li>
 				<li>Lebensschutz</li>
 			</ul>
-			<div><b>Alles bekannte rechte Kampfbegriffe!</b></div>
+			<div><b>Alles bekannte, rechtsextreme Kampfbegriffe!</b></div>
 		</div>
 
 		<footer class="text-center pt-8 text-gray-400">
