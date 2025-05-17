@@ -162,5 +162,11 @@ Mit freundlichen Grüßen
 				class="border-[red] border-solid border-2 text-[red] p-4 rounded-full cursor-pointer"
 			/>
 		</form>
+		<footer class="text-center pt-8 text-gray-400">
+			<a
+				href="https://www.dielinke-heidekreis.de/service/impressum/"
+				class="underline text-center w-full">Impressum</a
+			>
+		</footer>
 	</main>
 </div>
