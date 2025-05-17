@@ -150,19 +150,21 @@ Mit freundlichen Grüßen
 					{/each}
 				</select>
 			</label>
-			<input
-				type="submit"
-				id="btn_letter"
-				value="Brief generieren"
-				class="bg-[red] text-white p-4 rounded-full cursor-pointer"
-			/>
-
-			<input
-				type="submit"
-				id="btn_email"
-				value="E-Mail verschicken"
-				class="border-[red] border-solid border-2 text-[red] p-4 rounded-full cursor-pointer"
-			/>
+			<div class="flex gap-2">
+				<!-- <div class="text-center -my-2 font-bold">ODER</div> -->
+				<input
+					type="submit"
+					id="btn_letter"
+					value="Brief drucken (PDF)"
+					class="bg-[red] text-white p-4 rounded-full cursor-pointer flex-1"
+				/>
+				<input
+					type="submit"
+					id="btn_email"
+					value="E-Mail verschicken"
+					class="bg-[red] text-white p-4 rounded-full cursor-pointer flex-1"
+				/>
+			</div>
 		</form>
 		<footer class="text-center pt-8 text-gray-400">
 			<a
