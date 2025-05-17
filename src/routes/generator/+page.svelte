@@ -145,6 +145,7 @@ Mit freundlichen Grüßen
 			<label class="flex flex-col lg:flex-row justify-between">
 				<span>In welchem Wahlkreis gehst du wählen?</span>
 				<select required name="user_wahlkreis">
+					<option value={null} disabled selected>Bitte wählen</option>
 					{#each wahlkreise as wahlkreis (wahlkreis)}
 						<option value={wahlkreis}>{wahlkreis}</option>
 					{/each}
