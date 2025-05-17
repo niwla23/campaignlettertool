@@ -26,7 +26,7 @@
 		'Verhindern Sie den AfD-Kongress zum Kinderschutz im Landtag',
 		'Der Landtag darf kein Sprachrohr für AfD-Ideologie zum Kinderschutz sein',
 		'AfD-Kinderschutzkongress untergräbt demokratische Grundwerte',
-		'Nutzung des Landtags für AfD-Kongress ist inakzeptabel – es geht um Kinder',
+		'Nutzung des Landtags für AfD-Kinder-Kongress ist inakzeptabel',
 		'Kinderschutz im Deckmantel rechter Hetze? Nicht im Landtag!',
 		'Bitte setzen Sie sich gegen den AfD-Kongress zum Kinderschutz ein',
 		'Der Landtag darf kein Ort für rechtsextreme Kinderschutzagenda sein',
