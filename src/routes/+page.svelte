@@ -12,8 +12,8 @@
 
 			<br />
 			<br />
-			Nutze unseren Musterbrief über unseren E-Mail-Generator und mach deutlich, dass auch Du die Würde
-			des höchsten Hauses in Niedersachsen attackiert siehst!
+			Nutze unseren Musterbrief über unseren E-Mail-Generator und verteidige mit uns die Würde des höchsten
+			Hauses in Niedersachsen!
 
 			<br />
 			<br />
