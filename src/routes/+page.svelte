@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+	import { mailtoUrl, text } from '$lib/stores';
 	import { jsPDF } from 'jspdf';
 
 	const template = `
@@ -98,18 +100,21 @@ Mit freundlichen Grüßen
 			});
 		}
 
-		const text = template
-			.replaceAll('[user_name]', data.user_name)
-			.replaceAll('[user_city]', data.user_city)
-			.replaceAll('[user_wahlkreis]', data.user_wahlkreis.toString().split(':')[1].trim());
+		text.set(
+			template
+				.replaceAll('[user_name]', data.user_name)
+				.replaceAll('[user_city]', data.user_city)
+				.replaceAll('[user_wahlkreis]', data.user_wahlkreis.toString().split(':')[1].trim())
+		);
 
 		if (isEmail) {
 			// const url = new URL('mailto:praesidentin@lt.niedersachsen.de');
 			// url.searchParams.append('subject', 'AfD-Kinderkongress');
 			// url.searchParams.append('body', text);
-			const url = `mailto:praesidentin@lt.niedersachsen.de?subject=AfD-Kinderkongress&body=${text.replaceAll('\n', '%0D%0A')}`;
-			console.log(url.toString());
-			window.location.href = url.toString();
+			mailtoUrl.set(
+				`mailto:praesidentin@lt.niedersachsen.de?subject=AfD-Kinderkongress&body=${$text.replaceAll('\n', '%0D%0A')}`
+			);
+			goto('/email');
 			return;
 		}
 
@@ -118,7 +123,7 @@ Mit freundlichen Grüßen
 
 		doc.setFont('times');
 		doc.setFontSize(13);
-		doc.text(text, 15, 40);
+		doc.text($text, 15, 40);
 		doc.save('AfD_Kinderkongress_Brief.pdf');
 	}
 </script>
