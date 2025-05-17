@@ -3,9 +3,43 @@
 	import { text, mailtoUrl } from '$lib/stores';
 	import { onMount } from 'svelte';
 
+	const subjectOptions = [
+		'Bitte verhindern Sie den AfD-Kinderschutzkongress im Landtag',
+		'AfD-Kongress zum Kinderschutz im Landtag',
+		'Kinderschutz darf nicht durch AfD im Landtag missbraucht werden',
+		'Appell an Sie: Stoppen Sie den AfD-Kongress im Namen des Kinderschutzes',
+		'Kein Raum für AfD-Kinderschutzkongress im Niedersächsischen Landtag',
+		'Landtag als Bühne für AfD-Ideologie unter dem Deckmantel Kinderschutz?',
+		'Klares Zeichen gegen den AfD-Kinderschutzkongress im Parlament nötig',
+		'AfD-Kongress im Landtag gefährdet demokratische Werte – bitte handeln Sie',
+		'Verhindern Sie die Instrumentalisierung des Kinderschutzes durch die AfD',
+		'Der Landtag darf kein Ort für den AfD-Kinderschutzkongress sein',
+		'Missbrauch des Kinderschutzes durch AfD im Landtag verhindern',
+		'AfD nutzt Kinderschutz zur Hetze – nicht im Landtag!',
+		'Landtagsräume sind kein Ort für AfD-Kinderschutzpropaganda',
+		'AfD-Kinderschutzkongress widerspricht dem Auftrag des Landtags',
+		'Ich bitte Sie: Keine Bühne für den AfD-Kinderschutzkongress',
+		'Kinderschutz als Vorwand für AfD-Ideologie im Landtag? Bitte handeln Sie',
+		'Der AfD-Kongress zum Kinderschutz gehört nicht in unser Parlament',
+		'Kinderschutzkongress der AfD ist ein Angriff auf Demokratie im Landtag',
+		'Keine Legitimation für AfD-Kinderschutzkongress durch Landtagsräume',
+		'Verhindern Sie den AfD-Kongress zum Kinderschutz im Landtag',
+		'Der Landtag darf kein Sprachrohr für AfD-Ideologie zum Kinderschutz sein',
+		'AfD-Kinderschutzkongress untergräbt demokratische Grundwerte',
+		'Nutzung des Landtags für AfD-Kongress ist inakzeptabel – es geht um Kinder',
+		'Kinderschutz im Deckmantel rechter Hetze? Nicht im Landtag!',
+		'Bitte setzen Sie sich gegen den AfD-Kongress zum Kinderschutz ein',
+		'Der Landtag darf kein Ort für rechtsextreme Kinderschutzagenda sein',
+		'Kinderschutz ja – AfD-Kongress im Parlament nein!',
+		'AfD-Kinderschutzkongress bedroht Vielfalt und Demokratie – bitte handeln Sie',
+		'Öffentliche Räume des Landtags sind kein Ort für den AfD-Kinderschutzgipfel'
+	];
+
 	function openMailto(alternative?: boolean) {
+		const subject = subjectOptions[Math.floor(Math.random() * subjectOptions.length)];
+
 		mailtoUrl.set(
-			`mailto:praesidentin@lt.niedersachsen.de?subject=AfD-Kinderkongress&body=${$text.replaceAll('\n', '%0D%0A')}`
+			`mailto:praesidentin@lt.niedersachsen.de?subject=${subject}&body=${$text.replaceAll('\n', '%0D%0A')}`
 		);
 		if (alternative) {
 			window.location.href = $mailtoUrl;
