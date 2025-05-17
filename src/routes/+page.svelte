@@ -38,7 +38,7 @@
 				<li>Pädophilie-Verharmlosung</li>
 				<li>Lebensschutz</li>
 			</ul>
-			<div><b>Alles bekannte rechtsextreme Kampfbegriffe!</b></div>
+			<div><b>Alles bekannte rechte Kampfbegriffe!</b></div>
 		</div>
 
 		<footer class="text-center pt-8 text-gray-400">
