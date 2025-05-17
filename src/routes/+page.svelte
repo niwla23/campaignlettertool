@@ -80,6 +80,7 @@ Mit freundlichen Grüßen
 	];
 
 	async function generateLetter(event: SubmitEvent) {
+		window.umami.track('generate_letter');
 		event.preventDefault();
 		const form = event.target;
 		const formData = new FormData(form);
@@ -114,6 +115,7 @@ Mit freundlichen Grüßen
 		doc.setFontSize(13);
 		doc.text(text, 10, 30);
 		doc.save('AfD_Kinderkongress_Brief.pdf');
+		window.umami.track('generate_letter_saved');
 	}
 </script>
 
