@@ -80,47 +80,46 @@ Mit freundlichen Grüßen
 	];
 
 	async function generateLetter(event: SubmitEvent) {
-		if (!import.meta.env.DEV) window.umami.track('generate_letter');
 		event.preventDefault();
+
+		const isEmail = event.submitter.id == 'btn_email';
+
 		const form = event.target;
 		const formData = new FormData(form);
 
 		const data = Object.fromEntries(formData.entries());
 		console.log(data);
 
+		if (!import.meta.env.DEV) {
+			window.umami.track('generate_letter', {
+				wahlkreis: data.user_wahlkreis,
+				city: data.user_city,
+				isEmail
+			});
+		}
+
 		const text = template
 			.replaceAll('[user_name]', data.user_name)
 			.replaceAll('[user_city]', data.user_city)
 			.replaceAll('[user_wahlkreis]', data.user_wahlkreis.toString().split(':')[1].trim());
 
+		if (isEmail) {
+			const url = new URL('mailto:praesidentin@lt.niedersachsen.de');
+			url.searchParams.append('subject', 'AfD-Kinderkongress');
+			url.searchParams.append('body', text);
+			// const url = `mailto:praesidentin@lt.niedersachsen.de?subject=AfD-Kinderkongress?body=${text}`;
+			console.log(url.toString());
+			window.location.href = url.toString();
+			return;
+		}
+
 		const doc = new jsPDF();
 		console.log(doc.getFontList());
 
-		// const myFont = await (await fetch('/AncizarSerif-Regular.ttf')).blob();
-		// // Load and convert font to base64 string
-		// const base64Font = await fetch('/AncizarSerif-Regular.ttf')
-		// 	.then((res) => res.blob())
-		// 	.then(
-		// 		(blob) =>
-		// 			new Promise((resolve, reject) => {
-		// 				const reader = new FileReader();
-		// 				reader.onloadend = () => resolve(reader.result.split(',')[1]); // base64 only
-		// 				reader.onerror = reject;
-		// 				reader.readAsDataURL(blob);
-		// 			})
-		// 	);
-		//
-		// doc.addFileToVFS('font.ttf', base64Font);
-		// doc.addFont('font.ttf', 'font', 'normal');
 		doc.setFont('times');
 		doc.setFontSize(13);
 		doc.text(text, 15, 40);
 		doc.save('AfD_Kinderkongress_Brief.pdf');
-		if (!import.meta.env.DEV)
-			window.umami.track('generate_letter_saved', {
-				wahlkreis: data.user_wahlkreis,
-				city: data.user_city
-			});
 	}
 </script>
 
@@ -149,8 +148,16 @@ Mit freundlichen Grüßen
 			</label>
 			<input
 				type="submit"
+				id="btn_letter"
 				value="Brief generieren"
 				class="bg-[red] text-white p-4 rounded-full cursor-pointer"
+			/>
+
+			<input
+				type="submit"
+				id="btn_email"
+				value="E-Mail verschicken"
+				class="border-[red] border-solid border-2 text-[red] p-4 rounded-full cursor-pointer"
 			/>
 		</form>
 	</main>
