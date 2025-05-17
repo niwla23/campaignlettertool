@@ -130,15 +130,15 @@ Mit freundlichen Grüßen
 			<h1 class="font-bold text-xl pb-4">Briefgenerator: Keine Kindershitshow in Niedersachsen!</h1>
 		</header>
 		<form class="flex flex-col gap-4" on:submit={generateLetter}>
-			<label class="flex justify-between items-center">
+			<label class="flex flex-col lg:flex-row justify-between">
 				<span>Dein Name</span>
 				<input type="text" name="user_name" />
 			</label>
-			<label class="flex justify-between items-center">
+			<label class="flex flex-col lg:flex-row justify-between">
 				<span>Von wo kommst du? (deine Stadt)</span>
 				<input type="text" name="user_city" />
 			</label>
-			<label class="flex justify-between items-center">
+			<label class="flex flex-col lg:flex-row justify-between">
 				<span>In welchem Wahlkreis gehst du wählen?</span>
 				<select name="user_wahlkreis">
 					{#each wahlkreise as wahlkreis (wahlkreis)}
