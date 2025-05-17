@@ -1,16 +1,25 @@
-<script>
+<script lang="ts">
+	import { goto } from '$app/navigation';
 	import { text, mailtoUrl } from '$lib/stores';
 	import { onMount } from 'svelte';
 
-	function openMailto() {
+	function openMailto(alternative?: boolean) {
 		mailtoUrl.set(
 			`mailto:praesidentin@lt.niedersachsen.de?subject=AfD-Kinderkongress&body=${$text.replaceAll('\n', '%0D%0A')}`
 		);
-		window.open($mailtoUrl, '_blank');
+		if (alternative) {
+			window.location.href = $mailtoUrl;
+		} else {
+			window.open($mailtoUrl, '_blank');
+		}
 	}
 
 	onMount(() => {
-		setTimeout(openMailto, 500);
+		if ($text == '') {
+			goto('/');
+			return;
+		}
+		setTimeout(openMailto, 1500);
 	});
 </script>
 
@@ -24,6 +33,21 @@
 			Wir werden versuchen dein E-Mail Programm zu öffnen. Wenn das nicht funktioniert, kannst du
 			den Text hier kopieren.
 		</div>
+		<div class="py-2">An: <b>praesidentin@lt.niedersachsen.de</b></div>
 		<textarea value={$text} disabled class="w-full h-64"></textarea>
+
+		<div class="flex gap-2">
+			<button
+				on:click={() => navigator.clipboard.writeText($text)}
+				class="flex-1 border-[red] border-solid border-2 text-[red] p-4 rounded-full cursor-pointer"
+				>Alles kopieren</button
+			>
+			<button
+				on:click={openMailto(true)}
+				class="flex-1 bg-[red] text-white p-4 rounded-full cursor-pointer"
+			>
+				Automatisch versuchen
+			</button>
+		</div>
 	</main>
 </div>

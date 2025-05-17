@@ -111,9 +111,6 @@ Mit freundlichen Grüßen
 			// const url = new URL('mailto:praesidentin@lt.niedersachsen.de');
 			// url.searchParams.append('subject', 'AfD-Kinderkongress');
 			// url.searchParams.append('body', text);
-			mailtoUrl.set(
-				`mailto:praesidentin@lt.niedersachsen.de?subject=AfD-Kinderkongress&body=${$text.replaceAll('\n', '%0D%0A')}`
-			);
 			goto('/email');
 			return;
 		}
@@ -137,15 +134,15 @@ Mit freundlichen Grüßen
 		<form class="flex flex-col gap-4" on:submit={generateLetter}>
 			<label class="flex flex-col lg:flex-row justify-between">
 				<span>Dein Name</span>
-				<input type="text" name="user_name" />
+				<input type="text" required name="user_name" />
 			</label>
 			<label class="flex flex-col lg:flex-row justify-between">
 				<span>Von wo kommst du? (deine Stadt)</span>
-				<input type="text" name="user_city" />
+				<input required type="text" name="user_city" />
 			</label>
 			<label class="flex flex-col lg:flex-row justify-between">
 				<span>In welchem Wahlkreis gehst du wählen?</span>
-				<select name="user_wahlkreis">
+				<select required name="user_wahlkreis">
 					{#each wahlkreise as wahlkreis (wahlkreis)}
 						<option value={wahlkreis}>{wahlkreis}</option>
 					{/each}
