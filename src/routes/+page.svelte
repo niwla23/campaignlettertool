@@ -16,21 +16,26 @@ ihren sogenannten „Ersten Kinderschutzkongress der AfD-Fraktion Niedersachsen�
 Niedersächsischen Landtag.
 
 Dem einen Kongress, zu dem, wie Ihnen sicherlich bekannt, das niedersächsische
-Ministerium für Soziales, Arbeit, Gesundheit und Gleichstellung und die
-Kinderschutz-Akademie des Kinderschutzbundes Landesverband Niedersachsen einladen,
-geht es um den Abbau von Diskriminierung und ganzheitlicher Bildungsarbeit. Der andere
-Kongress der AfD dreht sich um die Diskussion um sogenannte „Frühsexualisierung“,
-„Gender-Propaganda“, „Pädophilie-Verharmlosung“ und „Lebensschutz“, wie auf der
-Webseite der Landtagsfraktion nachzulesen ist.
+Ministerium für Soziales, Arbeit, Gesundheit und Gleichstellung und die Kinderschutz-Akademie
+des Kinderschutzbundes Landesverband Niedersachsen einladen, geht es um den Abbau
+von Diskriminierung und ganzheitlicher Bildungsarbeit. Der andere Kongress der AfD
+dreht sich um die Diskussion um sogenannte „Frühsexualisierung“, „Gender-Propaganda“,
+„Pädophilie-Verharmlosung“ und „Lebensschutz“, wie auf der Webseite
+der Landtagsfraktion nachzulesen ist.
 
-Dass alle genannten Begriffe in rechtsextremistischen Kreisen (die offizielle Beurteilung der AfD als rechtsextrem steht bekanntlich aktuell unter Stillhaltezusage des Verfassungsschutzes) verwendet werden, um mittels der Instrumentalisierung des „Kinderschutzes“ marginalisierte Gruppen zu kriminalisieren und öffentlich zu denunzieren, ist bedauerlich.
+Dass alle genannten Begriffe in rechtsextremistischen Kreisen (die offizielle Beurteilung
+der AfD als rechtsextrem steht bekanntlich aktuell unter Stillhaltezusage
+des Verfassungsschutzes) verwendet werden, um mittels der Instrumentalisierung
+des „Kinderschutzes“ marginalisierte Gruppen zu kriminalisieren und öffentlich
+zu denunzieren, ist bedauerlich.
 
 Dass die AfD hierzu die öffentlichen Räumlichkeiten des niedersächsischen Landtags nutzen
 und unser Landesparlament, welches als Legislative Niedersachsens eine besondere
 Bedeutung und Verantwortung hinsichtlich seiner humanistisch geprägten, demokratischen
 Werte hat, missbrauchen kann, ist erschreckend. Dieser Umstand macht zutiefst betrübt.
-Auch nach außen wirkt es fast skandalös, dass der Partei, dessen innerer Rädelsführer „Faschist“ genannt werden darf, die Möglichkeit dieser eiskalten Instrumentalisierung von Kinderschutz
-und den Räumlichkeiten des Parlaments geboten ist.
+Auch nach außen wirkt es fast skandalös, dass der Partei, dessen innerer Rädelsführer
+„Faschist“ genannt werden darf, die Möglichkeit dieser eiskalten Instrumentalisierung
+von Kinderschutz und den Räumlichkeiten des Parlaments geboten ist.
 
 Ich bitte Sie daher, alles in Ihrer Position als Präsidentin des niedersächsischen Landtags
 stehende zu tun, um den Kongress der AfD im niedersächsischen Landtag zu verhindern.
