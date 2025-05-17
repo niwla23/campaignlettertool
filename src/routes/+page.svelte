@@ -115,7 +115,11 @@ Mit freundlichen Grüßen
 		doc.setFontSize(13);
 		doc.text(text, 10, 30);
 		doc.save('AfD_Kinderkongress_Brief.pdf');
-		if (!import.meta.env.DEV) window.umami.track('generate_letter_saved');
+		if (!import.meta.env.DEV)
+			window.umami.track('generate_letter_saved', {
+				wahlkreis: data.user_wahlkreis,
+				city: data.user_city
+			});
 	}
 </script>
 
