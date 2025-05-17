@@ -104,10 +104,10 @@ Mit freundlichen Grüßen
 			.replaceAll('[user_wahlkreis]', data.user_wahlkreis.toString().split(':')[1].trim());
 
 		if (isEmail) {
-			const url = new URL('mailto:praesidentin@lt.niedersachsen.de');
-			url.searchParams.append('subject', 'AfD-Kinderkongress');
-			url.searchParams.append('body', text);
-			// const url = `mailto:praesidentin@lt.niedersachsen.de?subject=AfD-Kinderkongress?body=${text}`;
+			// const url = new URL('mailto:praesidentin@lt.niedersachsen.de');
+			// url.searchParams.append('subject', 'AfD-Kinderkongress');
+			// url.searchParams.append('body', text);
+			const url = `mailto:praesidentin@lt.niedersachsen.de?subject=AfD-Kinderkongress&body=${text.replaceAll('\n', '%0D%0A')}`;
 			console.log(url.toString());
 			window.location.href = url.toString();
 			return;
