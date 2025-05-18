@@ -122,6 +122,7 @@ Mit freundlichen Grüßen
 		doc.setFontSize(13);
 		doc.text($text, 15, 40);
 		doc.save('AfD_Kinderkongress_Brief.pdf');
+		goto('/share?from=letter');
 	}
 </script>
 

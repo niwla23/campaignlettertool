@@ -63,7 +63,13 @@
 			<img src="/logo.png" alt="Die LINKE Heidekreis Logo" class="py-8" />
 			<h1 class="font-bold text-xl pb-4">Briefgenerator: Keine Kindershitshow in Niedersachsen!</h1>
 		</header>
-		<div>
+
+		<a
+			href="/share?from=email"
+			class="w-full block text-center bg-[red] text-white p-4 rounded-full cursor-pointer transform transition-all active:scale-95"
+			>Kampagne Teilen</a
+		>
+		<div class="pt-4">
 			Wir werden versuchen dein E-Mail Programm zu öffnen. Wenn das nicht funktioniert, kannst du
 			den Text hier kopieren.
 		</div>
