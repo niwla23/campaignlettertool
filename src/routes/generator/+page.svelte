@@ -116,6 +116,7 @@ Mit freundlichen Grüßen
 			window.umami.track('generate_letter', {
 				wahlkreis: data.user_wahlkreis,
 				city: data.user_city,
+				bundesland: isNds ? 'Niedersachsen' : data.user_bundesland,
 				isEmail
 			});
 		}
