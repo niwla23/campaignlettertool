@@ -6,7 +6,7 @@
 	const template = `
 Sehr geehrte Frau Landtagspräsidentin Naber,
 
-mein Name ist [user_name] und ich komme aus [user_city] im Wahlkreis [user_wahlkreis].
+mein Name ist [user_name] und ich komme aus [user_location].
 Ich schreibe Ihnen, da ich verärgert bin.
 
 Wenige Tage nach dem niedersächsischen Kinderschutzkongress unter dem Motto
@@ -81,6 +81,26 @@ Mit freundlichen Grüßen
 		'053: Göttingen I'
 	];
 
+	const bundeslaender = [
+		'Baden-Württemberg',
+		'Bayern',
+		'Berlin',
+		'Brandenburg',
+		'Bremen',
+		'Hamburg',
+		'Hessen',
+		'Mecklenburg-Vorpommern',
+		'Nordrhein-Westfalen',
+		'Rheinland-Pfalz',
+		'Saarland',
+		'Sachsen',
+		'Sachsen-Anhalt',
+		'Schleswig-Holstein',
+		'Thüringen'
+	];
+
+	let isNds = true;
+
 	async function generateLetter(event: SubmitEvent) {
 		event.preventDefault();
 
@@ -100,11 +120,14 @@ Mit freundlichen Grüßen
 			});
 		}
 
+		const user_location = isNds
+			? `${data.user_city} im Wahlkreis ${data.user_wahlkreis.toString().split(':')[1].trim()}`
+			: `${data.user_city} in ${data.user_bundesland}`;
+
 		text.set(
 			template
 				.replaceAll('[user_name]', data.user_name)
-				.replaceAll('[user_city]', data.user_city)
-				.replaceAll('[user_wahlkreis]', data.user_wahlkreis.toString().split(':')[1].trim())
+				.replaceAll('[user_location]', user_location)
 		);
 
 		if (isEmail) {
@@ -143,15 +166,31 @@ Mit freundlichen Grüßen
 				<span>Von wo kommst du? (deine Stadt)</span>
 				<input required type="text" name="user_city" />
 			</label>
-			<label class="flex flex-col lg:flex-row justify-between">
+			<label class="flex flex-col lg:flex-row justify-between" class:hidden={!isNds}>
 				<span>In welchem Wahlkreis gehst du wählen?</span>
-				<select required name="user_wahlkreis">
+				<select required={isNds} name="user_wahlkreis">
 					<option value={null} disabled selected>Bitte wählen</option>
 					{#each wahlkreise as wahlkreis (wahlkreis)}
 						<option value={wahlkreis}>{wahlkreis}</option>
 					{/each}
 				</select>
 			</label>
+			<label class="flex flex-col lg:flex-row justify-between" class:hidden={isNds}>
+				<span>Aus welchem Bundesland kommst du?</span>
+				<select required={!isNds} name="user_bundesland">
+					<option value={null} disabled selected>Bitte wählen</option>
+					{#each bundeslaender as bundesland (bundesland)}
+						<option value={bundesland}>{bundesland}</option>
+					{/each}
+				</select>
+			</label>
+			<button
+				type="button"
+				class="underline text-sm text-gray-500 text-right cursor-pointer w-min text-nowrap self-end"
+				on:click={() => (isNds = !isNds)}
+			>
+				{isNds ? 'Nicht in Niedersachsen?' : 'Ich wohne in Niedersachsen'}
+			</button>
 			<div class="flex gap-2">
 				<!-- <div class="text-center -my-2 font-bold">ODER</div> -->
 				<input
